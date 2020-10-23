@@ -1,0 +1,7 @@
+node_modules/
+.git
+features/
+reports/snapshots/
+reports/*.*
+debug.log
+genlog.sh
