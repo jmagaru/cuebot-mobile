@@ -30,6 +30,14 @@ module.exports.default = () => {
     "\t\tGiven my search keyword is 'YouTube'\n" +
     "\t\tWhen I search the keyword on Google\n" +
     "\t\tThen I can see keyword 'YouTube' on search result page\n\n" +
+    "\t@testmobile\n" +
+    "\tScenario: My Sample Mobile Scenario\n"+
+    "\t\tGiven that I set \"Android\" as platform with version of \"10\" \n"+
+    "\t\tGiven that I set \"emulator-5554\" as device\n "+
+    "\t\tGiven that app is located at \"http://apksample.ueuo.com/apk/Kids.apk\" \n"+
+    "\t\tWhen I create new session on \"http://0.0.0.0:4723/wd/hub\" \n "+
+    "\t\tThen I wait 5 seconds\n"+
+    "\t\tThen I close the session\n\n"+
     "";
 
   fs.writeFileSync(featureLocation + "/sample.feature", feature_template);

@@ -41,6 +41,7 @@ module.exports.default = ({ specs, tags, formatter }) => {
     `--require=${cuebotMobilePath}/steps/mobile/test-steps.js`,
     `--format=json:reports/cuebot-mobile-report.json`,
     `--format=${cuebotMobilePath}/formatter/cuebot-formatter.js`,
+    `--require=${cuebotMobilePath}/mobile/cuebot-phone.js`
   ]);
 
   if (tags) clientOptions = clientOptions.concat(["--tags", `${tags}`]);
