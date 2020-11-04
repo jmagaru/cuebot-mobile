@@ -13,6 +13,8 @@ Cuebot-mobile (CucumberJS for Mobile Application) is a test automation tool wrap
 
 ### Installation
 
+---
+
 #### NVM and NodeJ installation on Ubuntu
 
 To install NVM, just follow the following shell scripts
@@ -55,6 +57,8 @@ And finally, to use the specific nodeJS version execute the following script ( e
 $ nvm use v.13.12.0
 ```
 
+---
+
 #### NVM and NodeJS installation on Windows
 
 Follow the following steps fopr NMV installation on Windows.
@@ -94,6 +98,8 @@ To see available version of NodeJS from your NVM:
 c:\ nvm list
 ```
 
+---
+
 #### Initial Setup for cuebot-mobile
 
 Create you project folder and create initial package file:
@@ -122,6 +128,37 @@ To run the sample project and display the test report, execute the following com
  node_modules\.bin\cuebot-mobile --exec
 ```
 
+---
+
+### Setting up local mobile test environment (for now, only for Windows)
+
+#### Generate batch scripts/ Property file
+
+- Run the following to generate the batch scripts and property file
+
+```cmd
+node_modules\.bin\cuebot-mobile --setenv
+```
+
+#### Setup JAVA and Android SDK
+
+- After the batch scripts has been generated (_under environment folder_),
+  right-click on **env-setup.bat** then click **Run as Administrator**
+
+#### Setup and Run default Android emulator and Appium Server
+
+- Double click on **emu-setup.bat**
+
+#### Run Sample Mobile Test
+
+- Run the following to execute sample mobile testcase.
+
+```cmd
+node_modules\.bin\cuebot-mobile --exec
+```
+
+---
+
 ### How to create the test script ???
 
 > By checking the initial feature file (sample.feature under feature folder) and using the available keyword implementations,
@@ -143,6 +180,8 @@ Feature: My Sample Feature
 ```
 
 ### Final Thoughts
+
+---
 
 - To get the list of available keyword implementation please checkout the docs folder of this [Git repository](https://github.com/jmagaru/cuebot-mobile)
 - You can use [VSCode as your IDE](https://code.visualstudio.com/)
