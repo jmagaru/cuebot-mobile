@@ -1,6 +1,7 @@
 node_modules/
 .git
 features/
+environment/
 reports/snapshots/
 reports/*.*
 debug.log
