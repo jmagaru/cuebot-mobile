@@ -4,45 +4,18 @@
 
 ---
 
-### When I click on the page element _{locator}_
+### When I create new session on _{appium server url}_
 
-_This keyword will execute click event on the given element locator parameter: {locator}_
-
-```gherkin
-Scenario: Validate user page access
-   Given that a user in on page url 'https://www.facebook.com/'
-   When I click on the page element "//a[contains(text(),'Forgot account?')]"
-```
-
-_The example above will click on the Forgot Account link (locator is in the form of XPATH)_
+_This keyword will create session and connect to Appium Server given the {appium server url}_
 
 ```gherkin
-Scenario: Validate user page access
-   Given that a user in on page url 'https://www.facebook.com/'
-   When I click on the page element "._6ltj>a"
+Scenario: My Sample Mobile Scenario
+   Given that I set "Android" as platform with version of "10"
+   Given that I set "emulator-5554" as device
+   Given that app is located at "http://apksample.ueuo.com/apk/Kids.apk"
+   When I create new session on "http://0.0.0.0:4723/wd/hub"
 ```
 
-_The example above will click on the Forgot Account link (locator is in the form of CSS Selector)_
-
-**_Note : This time, use double-quote instead of single-quote in the locator parameter_**
-
----
-
-### When I entered _{textvalue}_ on text field _{locator}_
-
-_This keyword will enter the {textvalue} on the field {locator}_
-
-```gherkin
-Scenario: Test keyword implementation | Given User is on page URL <Page URL>
-   Given that a user is on page url 'https://www.facebook.com/'
-   When I click the page element "._6ltj>a"
-   When I entered 'myemail@mail.com' on text field "#identify_email"
-```
-
-_The example above will enter 'myemail@mail.com' on text field having locator '#identify_email'_
-
-**_Note : This time, use double-quote instead of single-quote in the locator parameter_**
-
-**_Note : On locator, you can use either CSS Selector or XPath_**
+_The example above will try to connect on the appium server 'http://0.0.0.0:4723/wd/hub'_
 
 ---
