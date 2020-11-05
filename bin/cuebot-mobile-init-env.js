@@ -95,9 +95,9 @@ module.exports.default = () => {
   "REM @echo on \n"+
   "call sdkmanager --update\n"+
   "echo [ ACTION ] - Downloading System Images : Android-29\n"+
-  "call yes | sdkmanager \"platform-tools\" \"platforms;android-29\" \"system-images;android-29;google_apis;x86\"\n"+
+  "call echo yes | sdkmanager \"platform-tools\" \"platforms;android-29\" \"system-images;android-29;google_apis;x86\"\n"+
   "echo [ ACTION ] - Activating licenses\n"+
-  "yes | sdkmanager --licenses\n"+
+  "call sdkmanager --licenses < file-y.txt\n"+
   "echo [ ACTION ] - Creating Default Emulator : Android29\n"+
   "echo no | avdmanager create avd -n Android29 -k \"system-images;android-29;google_apis;x86\" --force\n"+
   "echo [ ACTION ] - Launching emulator : Android29\n"+
@@ -106,6 +106,19 @@ module.exports.default = () => {
   "timeout 30 /nobreak \n"+
    "\n"
   fs.writeFileSync(infraLocation + "/emu-setup.bat", emu_batch_script);
+  process.stdout.write("Done.\n");
+
+  process.stdout.write("[ ACTION ] - Creating Emulator Setup Support file...");
+  let emu_support_file =
+  "y\n"+
+  "y\n"+
+  "y\n"+
+  "y\n"+
+  "y\n"+
+  "y\n"+
+  "y\n"+
+  "y\n"
+  fs.writeFileSync(infraLocation + "/file-y.txt", emu_support_file);
   process.stdout.write("Done.\n");
 
 
