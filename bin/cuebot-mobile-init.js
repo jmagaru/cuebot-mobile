@@ -25,11 +25,6 @@ module.exports.default = () => {
     "@cuebot \nFeature: My Sample Feature\n" +
     "\tAs Automation engineer\n" +
     "\tI want to verify that all functionality are working as they should\n\n" +
-    "\t@sample\n" +
-    "\tScenario: My Sample Scenario\n" +
-    "\t\tGiven my search keyword is 'YouTube'\n" +
-    "\t\tWhen I search the keyword on Google\n" +
-    "\t\tThen I can see keyword 'YouTube' on search result page\n\n" +
     "\t@testmobile\n" +
     "\tScenario: My Sample Mobile Scenario\n"+
     "\t\tGiven that I set \"Android\" as platform with version of \"10\" \n"+
