@@ -18,13 +18,15 @@ module.exports.default = () => {
     process.stdout.write("already exists.\n");
   }
 
+  let archive_folder = process.cwd();
+
   // Creating Batch scripts and Property File
   process.stdout.write("[ ACTION ] - Creating Environment Setup batch file...");
   let env_batch_script =
     "@echo off\n"+
     "net.exe session 1>NUL 2>NUL || (Echo [ CRITICAL ] This script needs to be Run As Administrator & pause & Exit /b 1)\n"+
     "REM Declaring variables for archive sources \n"+
-    "For /F \"tokens=1* delims==\" %%A IN (archive.properties) DO ( \n"+
+    "For /F \"tokens=1* delims==\" %%A IN ("+archive_folder+"\\archive.properties) DO ( \n"+
     "\t set %%A=%%B \n"+
     ")\n\n"+
     "REM Creating Folder List\n"+
@@ -47,7 +49,7 @@ module.exports.default = () => {
     "curl -o 7zip-installer.exe %download-url%\n"+
     "echo [ INFO ] - Installing 7zip extraction tool\n"+
     "start /wait 7zip-installer.exe /S\n"+
-    "set zip-command-folder=C:\Program Files\7-Zip\n\n"+
+    "set zip-command-folder=C:\\Program Files\\7-Zip\n\n"+
     "REM Download the Android command-line tools\n"+
     "set download-url=%ANDROID_CMD_TOOLS%\n"+
     "echo [ INFO ] - Downloading android command-line tools from %download-url%\n"+
