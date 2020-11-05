@@ -1,6 +1,6 @@
 {
   "name": "cuebot-mobile",
-  "version": "1.0.0-beta-002",
+  "version": "1.0.0-beta-003",
   "description": "Mobile Test Automation Framework using CucumberJS",
   "main": "bin/cuebot-mobile.js",
   "scripts": {
