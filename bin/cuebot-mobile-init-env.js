@@ -26,7 +26,7 @@ module.exports.default = () => {
     "@echo off\n"+
     "net.exe session 1>NUL 2>NUL || (Echo [ CRITICAL ] This script needs to be Run As Administrator & pause & Exit /b 1)\n"+
     "REM Declaring variables for archive sources \n"+
-    "For /F \"tokens=1* delims==\" %%A IN ("+archive_folder+"\\archive.properties) DO ( \n"+
+    "For /F \"tokens=1* delims==\" %%A IN ("+archive_folder+"\\environment\\archive.properties) DO ( \n"+
     "\t set %%A=%%B \n"+
     ")\n\n"+
     "REM Creating Folder List\n"+
