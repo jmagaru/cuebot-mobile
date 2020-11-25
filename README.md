@@ -132,6 +132,14 @@ To run the sample project and display the test report, execute the following com
 
 ### Setting up local mobile test environment (for now, only for Windows)
 
+#### Prepare local machine to support Virtualization
+
+- To be able to run Emulator on your local machine, you must first enable Virtualization (VT-x/AMD/V) by switching it on through BIOS Setup. [Here's some guide on how to enable it.](https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968#:~:text=Press%20or%20Tap%20F1to%20enter,Press%20F10.)
+
+#### Install HAXM to local machine (for now, only for Windows)
+
+- [Download, extract and install HAXM](https://github.com/intel/haxm/releases/tag/v7.6.5)
+
 #### Generate batch scripts/ Property file
 
 - Run the following to generate the batch scripts and property file
