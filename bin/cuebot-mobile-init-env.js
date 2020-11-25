@@ -95,13 +95,13 @@ module.exports.default = () => {
   "REM @echo on \n"+
   "call sdkmanager --update\n"+
   "echo [ ACTION ] - Downloading System Images : Android-29\n"+
-  "call echo yes | sdkmanager \"platform-tools\" \"platforms;android-29\" \"system-images;android-29;google_apis;x86\"\n"+
+  "call echo yes | sdkmanager \"platform-tools\" \"platforms;android-29\" \"system-images;android-29;default;x86\"\n"+
   "echo [ ACTION ] - Activating licenses\n"+
   "call sdkmanager --licenses < file-y.txt\n"+
-  "echo [ ACTION ] - Creating Default Emulator : Android29\n"+
-  "echo no | avdmanager create avd -n Android29 -k \"system-images;android-29;google_apis;x86\" --force\n"+
-  "echo [ ACTION ] - Launching emulator : Android29\n"+
-  "start cmd /k emulator -avd Android29 -no-snapshot-save -no-boot-anim\n"+
+  "echo [ ACTION ] - Creating Default Emulator : generic_10\n"+ 
+  "echo no | avdmanager --verbose create avd --force --name \"generic_10\" --package \"system-images;android-29;default;x86\" --tag \"default\" --abi \"x86\"\n"+
+  "echo [ ACTION ] - Launching emulator : generic_10\n"+
+  "start cmd /k emulator -avd generic_10 -no-snapshot-save -no-boot-anim\n"+
   "start cmd /k appium -a 0.0.0.0 -p 4723\n"+
   "timeout 30 /nobreak \n"+
    "\n"

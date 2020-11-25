@@ -180,11 +180,14 @@ Feature: My Sample Feature
 	As Automation engineer
 	I want to verify that all functionality are working as they should
 
-	@sample
-	Scenario: My Sample Scenario
-		Given my search keyword is 'YouTube'
-		When I search the keyword on Google
-		Then I can see keyword 'YouTube' on search result page
+	@testmobile
+	Scenario: My Sample Mobile Scenario
+		Given that I set "Android" as platform with version of "10"
+		Given that I set "emulator-5554" as device
+		Given that app is located at "http://apksample.ueuo.com/apk/Kids.apk"
+		When I create new session on "http://0.0.0.0:4723/wd/hub"
+		Then I wait 5 seconds
+		Then I close the session
 ```
 
 ### Final Thoughts
